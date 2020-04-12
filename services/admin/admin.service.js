@@ -24,9 +24,27 @@ const advertisement = new Ad({
 
 }
 
+async function editAdvertisement(dataUpdate) {
+   
+    await  Ad.updateOne({_id:dataUpdate._id},{
+       $set:{
+         text:dataUpdate.text,
+        link:dataUpdate.link,
+        postby: dataUpdate.postby,
+        datepublished:dataUpdate.datepublished,
+        targetedUser: dataUpdate.age,
+        targetedUser: dataUpdate.location
+        
+       }});
+    
+      
+  }
 
-
-
+  async function deleteAd(id) {
+    console.log(id);
+  await  Ad.findByIdAndRemove({_id: id}) ;
+ 
+}
 async function getAdvertisement(id) {
 return await  Ad.findById({_id: id});
 
