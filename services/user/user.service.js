@@ -26,8 +26,15 @@ function deleteComment(params) {
     
 }
 
-function followUser(params) {
+async function followUser(params) {
+
     
+}
+
+ async function updateUser(id,update){
+    console.log(id,update ,'id print');
+    await User.updateOne({_id:id},{advetisements: {$push: update}});
+
 }
 
 module.exports = {
@@ -37,7 +44,9 @@ module.exports = {
     createComment,
     updateComment,
     deleteComment,
-    followUser
+    followUser,
+    updateUser
+
 }
 
 

@@ -25,6 +25,6 @@ const adSchema = new mongoose.Schema({
          }
     }  
 }, {timestamps: true});
-module.exports = mongoose.model("Advertisement", adSchema);
+module.exports = mongoose.model("ads", adSchema);
 
 // {timestamps: true} ===> createdAt and updateAt
